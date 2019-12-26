@@ -67,7 +67,7 @@ Page({
 	getGoodsCate(){
 		let that = this;
 		that.setData({
-			bastList: [{"image":"/images/fangchang/logo/home_fang.png","store_name":"汇一公寓","price":"均价10980/㎡","sales":"在售 | 2室2厅1卫","dizhi":"距离地铁2号线560米"},{"image":"/images/fangchang/logo/home_fang.png","store_name":"汇一公寓","price":"均价10980/㎡","sales":"在售 | 2室2厅1卫","dizhi":"距离地铁2号线560米"},{"image":"/images/fangchang/logo/home_fang.png","store_name":"汇一公寓","price":"均价10980/㎡","sales":"在售 | 2室2厅1卫","dizhi":"距离地铁2号线560米"}]
+			bastList: [{"image":"/images/fangchang/logo/home_fang.png","store_name":"汇一公寓","price":"均价10980/㎡","sales":"在售 | 2室2厅1卫","dizhi":"距离地铁2号线560米"},{"image":"/images/fangchang/logo/home_fang.png","store_name":"汇一公寓","price":"均价10980/㎡","sales":"在售 | 2室2厅1卫","dizhi":"距离地铁2号线560米"},{"image":"/images/fangchang/logo/home_fang.png","store_name":"汇一公寓","price":"均价10980/㎡","sales":"在售 | 2室2厅1卫","dizhi":"距离地铁2号线560米","rengou":"认购"}]
 		});
 		
 		wx.getSetting({

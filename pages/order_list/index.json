@@ -3,7 +3,8 @@
     "navbar": "/components/navbar/index",
     "authorize": "/components/authorize/authorize",
     "home": "/components/home/index",
-    "payment":"/components/payment/index"
+    "payment":"/components/payment/index",
+	"goodList": "/components/goodList/index"
   },
   "navigationBarTextStyle": "white"
 }

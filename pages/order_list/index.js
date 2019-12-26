@@ -31,6 +31,15 @@ Page({
     pay_close:false,
     pay_order_id:'',
     totalPrice:'0',
+	bastList: []
+  },
+  getGoodsCate(){
+  	let that = this;
+  	that.setData({
+		bastList: [{"image":"/images/fangchang/logo/home_fang.png","store_name":"汇一公寓","price":"均价10980/㎡","sales":"在售 | 2室2厅1卫","dizhi":"距离地铁2号线560米"},{"image":"/images/fangchang/logo/home_fang.png","store_name":"汇一公寓","price":"均价10980/㎡","sales":"在售 | 2室2厅1卫","dizhi":"距离地铁2号线560米"},{"image":"/images/fangchang/logo/home_fang.png","store_name":"汇一公寓","price":"均价10980/㎡","sales":"在售 | 2室2厅1卫","dizhi":"距离地铁2号线560米","rengou":"认购"}]
+  	});
+  	
+  
   },
 
   /**
@@ -200,10 +209,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+	  this.getGoodsCate()
     if (app.globalData.isLog && this.data.isClose){
       this.getOrderData();
       this.setData({ loadend: false, page: 1, orderList:[]});
       this.getOrderList();
+	  
     }
   },
 
@@ -225,7 +236,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+	  this.getGoodsCate()
   },
 
   /**

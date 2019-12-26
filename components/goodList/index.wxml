@@ -19,10 +19,11 @@
                     
                   </view>
               </view>
-              <view class="weizhi" wx-if="{{!bastList[0].detail}}">
+              <view class="weizhi" wx:if="{{!bastList[0].detail}}">
 				  <view><image src="/images/fangchang/icon/jtjs.png"></image><text>长沙市芙蓉区远大二路725号</text></view>
 				  <!-- <view>待接单</view> -->
-				  <view class="rengou">认购</view>
+				  <view class="rengou" wx:if="{{item.rengou}}">{{item.rengou}}</view>
+				  <view wx:else>待接单</view>
 			  </view>
             </navigator>
           </block>   
