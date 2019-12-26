@@ -1,0 +1,4 @@
+<navbar parameter='{{parameter}}'></navbar>
+<view class='productSort'>
+   <goodList bastList="{{bastList}}"></goodList>
+</view>

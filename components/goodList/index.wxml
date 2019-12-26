@@ -1,0 +1,29 @@
+       <view class='goodList'>
+          <block wx:for="{{bastList}}" wx:key>
+            <navigator url='/pages/goods_details/index?id={{item.id}}' class='item acea-row row-between-wrapper {{bastList[0].detail ? "" : "breviary"}}'>
+              <view class='pictrue'>
+                <image src='{{item.image}}'></image>
+              </view>
+              <view class='underline'>
+                  <view class='text'>
+                      <view class='line1'>{{item.store_name}}</view>
+					  <view class='vip-money acea-row row-middle'><text class='num'>{{item.sales}}</text></view>
+					  <view class='vip-money acea-row row-middle' wx-if="{{item.detail}}"><text class='num'>{{item.dizhi}}</text></view>
+                      <view class='money font-color' wx-if="{{item.detail}}">￥<text class='num'>{{item.price}}</text></view>
+                      <!-- <view class='vip-money acea-row row-middle' wx:if='{{item.vip_price && item.vip_price > 0}}'>￥{{item.vip_price || 0}}<image  src='/images/vip.png'></image><text class='num'>已售{{item.sales}}{{item.unit_name}}</text></view> -->
+                      <view class='vip-money acea-row row-middle'>
+						  <span>住宅</span><text class='num leixing'>{{item.price}}</text>
+						  <span>公寓</span><text class='num leixing'>{{item.price}}</text>
+						  <span>写字楼</span><text class='num leixing'>{{item.price}}</text>
+					</view>
+                    
+                  </view>
+              </view>
+              <view class="weizhi" wx-if="{{!bastList[0].detail}}">
+				  <view><image src="/images/fangchang/icon/jtjs.png"></image><text>长沙市芙蓉区远大二路725号</text></view>
+				  <!-- <view>待接单</view> -->
+				  <view class="rengou">认购</view>
+			  </view>
+            </navigator>
+          </block>   
+       </view>
