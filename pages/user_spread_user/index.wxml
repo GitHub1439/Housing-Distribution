@@ -1,41 +1,94 @@
 <navbar parameter='{{parameter}}'></navbar>
 <view class='my-promotion'>
-    <view class="header">
-        <view class='name acea-row row-center-wrapper'>
-            <view>当前佣金</view>
-            <navigator url='/pages/user_spread_money/index?type=1' hover-class="none" class='record'>提现记录<text class='iconfont icon-xiangyou'></text></navigator>
-        </view>
-        <view class='num'>{{userInfo.brokerage_price}}</view>
-        <view class='profit acea-row row-between-wrapper'>
-            <view class='item'>
-              <view>昨日收益</view>
-              <view class='money'>{{userInfo.yesterDay}}</view>
-            </view>
-            <view class='item'>
-              <view>累积已提</view>
-              <view class='money'>{{userInfo.extractTotalPrice}}</view>
-            </view>
-        </view>
-    </view>
-    <navigator hover-class='none' url='/pages/user_cash/index' class='bnt bg-color'>立即提现</navigator>
-    <view class='list acea-row row-between-wrapper'>
-        <navigator  url='/pages/user_spread_code/index' hover-class="none" class='item acea-row row-center-wrapper row-column'>
-            <text class='iconfont icon-erweima'></text>
-            <view>推广名片</view>
-        </navigator>
-        <navigator url='/pages/promoter-list/index' hover-class="none" class='item acea-row row-center-wrapper row-column'>
-            <text class='iconfont icon-tongji'></text>
-            <view>推广人统计</view>
-        </navigator>
-        <navigator url='/pages/user_spread_money/index?type=2' hover-class="none" class='item acea-row row-center-wrapper row-column'>
-            <text class='iconfont icon-qiandai'></text>
-            <view>佣金明细</view>
-        </navigator>
-        <navigator url='/pages/promoter-order/index' hover-class="none" class='item acea-row row-center-wrapper row-column'>
-            <text class='iconfont icon-dingdan'></text>
-            <view>推广人订单</view>
-        </navigator>
-    </view>
+	<view class="user">
+		<view class='header bg-color acea-row row-between-wrapper' style="background: url(/images/fangchang/bg/bg.png);background-size: 100% 100%;">
+		   <view class='picTxt acea-row row-between-wrapper spread-fenxiao' bindtap="tiaozhuan">
+		      <view class='pictrue'><image src='{{userInfo.avatar}}'></image></view>
+		      <view class='text'>
+		         <view class='acea-row row-middle'>
+		            <view class='name line1'>{{userInfo.nickname || '请授权'}}</view>
+		            <view data-url='/pages/user_vip/index' class='member acea-row row-middle' wx:if="{{userInfo.vip}}" bindtap='goPages'>
+		            <image src='{{userInfo.vip_icon}}'></image>{{userInfo.vip_name}}</view>
+		         </view>
+		         <!-- <view class='id' data-url='/pages/user_info/index' bindtap='goPages' wx:if='{{userInfo.phone}}'>ID：{{userInfo.uid || 0}}<text class='iconfont icon-bianji1'></text></view>
+		         <view wx:else data-url='/pages/user_phone/index' bindtap='goPages'><text class="binding">绑定手机号</text></view> -->
+		      </view>
+		   </view>
+		   <!-- <text class='iconfont icon-shezhi' data-url='/pages/user_info/index' bindtap='goPages'></text> -->
+		</view>
+	</view>
+	<view class="user">
+		<view class='wrapper'>
+		   <view class='myOrder'>
+		     <view class='title acea-row row-between-wrapper chakan'>
+		        <view style="font-weight: bold;">公司累计：</view>
+		     </view>
+		     <view class='orderState acea-row row-middle'>
+		        <view class='item' data-url='/pages/order_list/index?status=0' bindtap='goPages'>
+		           <view class='pictrue'>
+		             <view class="text-spread">16</view>
+		             
+		           </view>
+		           <view>累计认购</view>
+		        </view>
+				<view class="interval"></view>
+		         <view class='item' data-url='/pages/order_list/index?status=1' bindtap='goPages'>
+		           <view class='pictrue'>
+		             <view class="text-spread">23</view>
+		             
+		           </view>
+		           <view>累计报备</view>
+		        </view>
+				<view class="interval"></view>
+		         <view class='item' data-url='/pages/order_list/index?status=2' bindtap='goPages'>
+		           <view class='pictrue'>
+		           <view class="text-spread">48</view>
+		           
+		           </view>
+		           <view>累计入客</view>
+		        </view>
+		     </view>
+			 <view class="duihuan">
+				 可兑换积分：10000
+			 </view>
+		   </view>
+		   <view class='myOrder'>
+		     <view class='orderState acea-row row-middle twospread'>
+		        <view class='item' data-url='/pages/order_list/index?status=0' bindtap='goPages'>
+		           <view class='pictrue'>
+		             <view class="text-spread">16</view>
+		             
+		           </view>
+		           <view>近日认购</view>
+		        </view>
+		         <view class='item' data-url='/pages/order_list/index?status=1' bindtap='goPages'>
+		           <view class='pictrue'>
+		             <view class="text-spread">23</view>
+		             
+		           </view>
+		           <view>近日报备</view>
+		        </view>
+		         <view class='item' data-url='/pages/order_list/index?status=2' bindtap='goPages'>
+		           <view class='pictrue'>
+		           <view class="text-spread">48</view>
+		           
+		           </view>
+		           <view>近日入客</view>
+		        </view>
+		     </view>
+		   </view>
+		</view>
+	</view>
+	<view class="addition">
+		<navigator>
+			<image src="/images/fangchang/icon/haibao.png"></image>
+			<view>分享海报</view>
+		</navigator>
+		<navigator>
+			<image src="../../images/fangchang/icon/guize.png"></image>
+			<view>分佣规则</view>
+		</navigator>
+	</view>
 </view>
 <authorize bind:onLoadFun='onLoadFun'></authorize>
 

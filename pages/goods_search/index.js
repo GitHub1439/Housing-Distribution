@@ -10,7 +10,7 @@ Page({
     parameter: {
       'navbar': '1',
       'return': '1',
-      'title': '搜索商品',
+      'title': '全民买房',
       'color': false
     },
     host_product:[],
@@ -33,9 +33,12 @@ Page({
   },
   getRoutineHotSearch: function () {
     var that = this;
-    getSearchKeyword().then(res=>{
-      that.setData({ hotSearchList: res.data });
-    });
+    // getSearchKeyword().then(res=>{
+    //   that.setData({ hotSearchList: res.data });
+    // });
+	that.setData({
+		hotSearchList: ["长沙岳麓区玉兰路","保利麓谷林语枫林","保利麓谷","保利麓谷林语枫林","保利麓谷"]
+	});
   },
   getProductList:function(){
     var that = this;

@@ -1,7 +1,7 @@
 <navbar parameter='{{parameter}}'></navbar>
 <view class='user'>
    <view class='header bg-color acea-row row-between-wrapper' style="background: url(/images/fangchang/bg/bg.png);background-size: 100% 100%;">
-      <view class='picTxt acea-row row-between-wrapper'>
+      <view class='picTxt acea-row row-between-wrapper' bindtap="tiaozhuan">
          <view class='pictrue'><image src='{{userInfo.avatar}}'></image></view>
          <view class='text'>
             <view class='acea-row row-middle'>
@@ -91,7 +91,7 @@
          </view>
       </view>
    </view>
-   <image src='/images/support.png' class='support'></image>
+   <!-- <image src='/images/support.png' class='support'></image> -->
 </view> 
 
 <authorize bind:onLoadFun='onLoadFun' isGoIndex='{{isGoIndex}}' iShidden="{{iShidden}}" isAuto="{{isAuto}}"></authorize>
